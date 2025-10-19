@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Món Quà Tặng Bạn</title>
+    <title>Mừng ngày Phụ nữ Việt Nam</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ffdde1 100%);
@@ -19,6 +20,7 @@
             align-items: center;
             padding: 20px;
         }
+
         .container {
             background: white;
             border-radius: 30px;
@@ -29,19 +31,30 @@
             position: relative;
             border: 3px solid rgba(255, 182, 193, 0.3);
         }
+
         .screen {
             display: none;
             padding: 40px;
             min-height: 500px;
             animation: fadeIn 0.5s ease;
         }
+
         .screen.active {
             display: block;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
+        /* Loading Screen */
         .loading {
             text-align: center;
             display: flex;
@@ -50,6 +63,7 @@
             align-items: center;
             min-height: 400px;
         }
+
         .loading-spinner {
             width: 60px;
             height: 60px;
@@ -59,14 +73,18 @@
             animation: spin 1s linear infinite;
             margin-bottom: 20px;
         }
+
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
         .loading-text {
             font-size: 1.2em;
             color: #ff6b9d;
             font-weight: 600;
         }
+
+        /* Welcome Screen */
         .welcome {
             text-align: center;
             display: flex;
@@ -74,6 +92,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .welcome h1 {
             font-size: 3em;
             background: linear-gradient(135deg, #ff6b9d, #ff8fab, #ffc3d9);
@@ -82,16 +101,19 @@
             margin-bottom: 20px;
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
+
         .welcome p {
             font-size: 1.2em;
             color: #666;
             margin-bottom: 30px;
             line-height: 1.6;
         }
+
         .btn {
             background: linear-gradient(135deg, #ff6b9d, #ff8fab);
             color: white;
@@ -103,14 +125,18 @@
             transition: all 0.3s;
             box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
         }
+
         .btn:hover {
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
         }
+
+        /* Round Screens */
         .round-header {
             text-align: center;
             margin-bottom: 40px;
         }
+
         .round-number {
             display: inline-block;
             background: linear-gradient(135deg, #ff6b9d, #ff8fab);
@@ -121,21 +147,25 @@
             margin-bottom: 15px;
             box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
         }
+
         .round-title {
             font-size: 2em;
             color: #ff6b9d;
             margin-bottom: 10px;
         }
+
         .round-subtitle {
             color: #666;
             font-size: 1.1em;
         }
+
         .options-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
+
         .option-card {
             background: linear-gradient(135deg, #fff5f7 0%, #ffe4e9 100%);
             border-radius: 20px;
@@ -145,16 +175,36 @@
             transition: all 0.3s;
             border: 3px solid transparent;
             position: relative;
+            overflow: hidden;
         }
+
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
         .option-card:hover {
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
         }
+
         .option-card.selected {
             border-color: #ff6b9d;
             background: linear-gradient(135deg, #ff6b9d, #ff8fab);
             color: white;
         }
+
+        .option-card.selected::before {
+            opacity: 1;
+        }
+
         .option-icon {
             font-size: 3.5em;
             margin-bottom: 10px;
@@ -162,18 +212,21 @@
             z-index: 1;
             filter: drop-shadow(2px 2px 4px rgba(255, 107, 157, 0.2));
         }
+
         .option-name {
             font-size: 1.1em;
             font-weight: 600;
             position: relative;
             z-index: 1;
         }
+
         .progress-bar {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-bottom: 30px;
         }
+
         .progress-dot {
             width: 12px;
             height: 12px;
@@ -181,32 +234,40 @@
             background: #ffd4e5;
             transition: all 0.3s;
         }
+
         .progress-dot.active {
             background: linear-gradient(135deg, #ff6b9d, #ff8fab);
             width: 30px;
             border-radius: 10px;
             box-shadow: 0 3px 10px rgba(255, 107, 157, 0.4);
         }
+
         .navigation {
             display: flex;
             justify-content: space-between;
             gap: 20px;
         }
+
         .btn-secondary {
             background: #e0e0e0;
             color: #666;
             flex: 1;
         }
+
         .btn-secondary:hover {
             background: #d0d0d0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+
         .btn-primary {
             flex: 1;
         }
+
+        /* Result Screen */
         .result {
             text-align: center;
         }
+
         .result-image {
             width: 100%;
             max-width: 500px;
@@ -221,14 +282,17 @@
             box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
             border: 3px solid rgba(255, 182, 193, 0.3);
         }
+
         .result-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .result-image-placeholder {
             font-size: 6em;
         }
+
         .result-message {
             background: linear-gradient(135deg, #ff6b9d, #ff8fab);
             -webkit-background-clip: text;
@@ -237,12 +301,15 @@
             font-weight: 700;
             margin-bottom: 20px;
         }
+
         .result-description {
             color: #666;
             font-size: 1.2em;
             line-height: 1.8;
             margin-bottom: 30px;
+            padding: 0 20px;
         }
+
         .result-combo {
             display: flex;
             justify-content: center;
@@ -250,6 +317,7 @@
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
+
         .combo-item {
             background: linear-gradient(135deg, #fff5f7, #ffe4e9);
             padding: 15px 25px;
@@ -258,28 +326,54 @@
             color: #ff6b9d;
             box-shadow: 0 5px 15px rgba(255, 107, 157, 0.2);
         }
+
         .error-message {
             background: #ffe4e9;
             color: #ff6b9d;
             padding: 15px;
             border-radius: 10px;
             margin-top: 20px;
-            text-align: left;
-            display: inline-block;
         }
+
         @media (max-width: 600px) {
-            .screen { padding: 20px; }
-            .welcome h1 { font-size: 2em; }
-            .round-title { font-size: 1.5em; }
-            .options-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; }
-            .option-card { padding: 20px 10px; }
-            .option-icon { font-size: 2.5em; }
-            .result-image { height: 250px; }
+            .screen {
+                padding: 20px;
+            }
+
+            .welcome h1 {
+                font-size: 2em;
+            }
+
+            .round-title {
+                font-size: 1.5em;
+            }
+
+            .options-grid {
+                grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+                gap: 15px;
+            }
+
+            .option-card {
+                padding: 20px 10px;
+            }
+
+            .option-icon {
+                font-size: 2.5em;
+            }
+
+            .result-image {
+                height: 250px;
+            }
+
+            .result-description {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Loading Screen -->
         <div class="screen active" id="loading">
             <div class="loading">
                 <div class="loading-spinner"></div>
@@ -287,15 +381,17 @@
             </div>
         </div>
 
+        <!-- Welcome Screen -->
         <div class="screen" id="welcome">
             <div class="welcome">
-                <h1>✨ Món Quà Tặng Bạn 💖</h1>
-                <p>Hãy cùng khám phá món quà đặc biệt dành riêng cho bạn qua 2 lựa chọn thú vị! 🌸<br>
-                Chọn những gì bạn yêu thích nhất và chờ xem điều bất ngờ nhé. 🎀</p>
+                <h1>✨ Khám Phá Bản Thân 💖</h1>
+                <p>Hãy cùng khám phá con người thật của bạn qua 2 câu hỏi thú vị! 🌸<br>
+                Chọn những gì bạn yêu thích nhất và nhận ngay lời chúc đặc biệt dành riêng cho bạn. 🎀</p>
                 <button class="btn" onclick="startGame()">Bắt Đầu Ngay</button>
             </div>
         </div>
 
+        <!-- Round 1: Flowers -->
         <div class="screen" id="round1">
             <div class="progress-bar">
                 <div class="progress-dot active"></div>
@@ -313,6 +409,7 @@
             </div>
         </div>
 
+        <!-- Round 2: Food -->
         <div class="screen" id="round2">
             <div class="progress-bar">
                 <div class="progress-dot active"></div>
@@ -330,6 +427,7 @@
             </div>
         </div>
 
+        <!-- Result Screen -->
         <div class="screen" id="result">
             <div class="result">
                 <div class="result-image" id="resultImage">
@@ -345,28 +443,28 @@
 
     <script>
         // ===== CẤU HÌNH =====
-        const CSV_URL = 'data.csv'; // Thay bằng URL CSV của bạn
-
+        const CSV_URL = 'data.csv'; // Thay URL CSV của bạn tại đây
+        
         // ===== DỮ LIỆU CỐ ĐỊNH =====
         const flowers = [
             { id: 0, name: 'Hoa Hồng', emoji: '🌹' },
             { id: 1, name: 'Hoa Cúc', emoji: '🌼' },
             { id: 2, name: 'Hướng Dương', emoji: '🌻' },
             { id: 3, name: 'Hoa Ly', emoji: '🌷' },
-            { id: 4, name: 'Hoa Sen', emoji: '🌸' }
+            { id: 4, name: 'Hoa Sen', emoji: '🪷' }
         ];
 
         const foods = [
-            { id: 0, name: 'Trà sữa', emoji: '🧋' },
-            { id: 1, name: 'Bánh ngọt', emoji: '🍰' },
-            { id: 2, name: 'Gà rán', emoji: '🍗' },
-            { id: 3, name: 'Tokbokki', emoji: '🥘' },
-            { id: 4, name: 'Salad', emoji: '🥗' },
-            { id: 5, name: 'Kem', emoji: '🍦' },
-            { id: 6, name: 'Pizza', emoji: '🍕' },
-            { id: 7, name: 'Sushi', emoji: '🍣' },
-            { id: 8, name: 'Trái cây', emoji: '🍓' },
-            { id: 9, name: 'Chocolate', emoji: '🍫' }
+            { id: 0, name: 'Trà Sữa', emoji: '🧋' },
+            { id: 1, name: 'Bánh Ngọt', emoji: '🍰' },
+            { id: 2, name: 'Sushi', emoji: '🍣' },
+            { id: 3, name: 'Salad', emoji: '🥗' },
+            { id: 4, name: 'Mì Ý', emoji: '🍝' },
+            { id: 5, name: 'Chocolate', emoji: '🍫' },
+            { id: 6, name: 'Kem', emoji: '🍦' },
+            { id: 7, name: 'Pizza', emoji: '🍕' },
+            { id: 8, name: 'Matcha', emoji: '🍵' },
+            { id: 9, name: 'Macarons', emoji: '🧁' }
         ];
 
         // ===== BIẾN TOÀN CỤC =====
@@ -374,34 +472,39 @@
             flower: null,
             food: null
         };
-        let dataLoaded = false;
-        let messagesData = {};
 
-        // ===== HÀM ĐỌC VÀ PARSE CSV =====
+        let dataLoaded = false;
+        let messagesData = {}; // Lưu trữ dữ liệu từ CSV
+
+        // ===== HÀM ĐỌC CSV =====
         async function loadCSVData() {
             try {
                 const response = await fetch(CSV_URL);
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error('Không thể tải file CSV');
                 }
+                
                 const csvText = await response.text();
                 parseCSV(csvText);
+                
                 dataLoaded = true;
                 console.log('✅ Đã tải thành công', Object.keys(messagesData).length, 'tổ hợp');
+                
+                // Chuyển từ loading sang welcome
                 showScreen('welcome');
             } catch (error) {
                 console.error('❌ Lỗi khi tải CSV:', error);
-                const loadingDiv = document.getElementById('loading');
-                loadingDiv.innerHTML = `
+                
+                // Hiển thị thông báo lỗi
+                document.getElementById('loading').innerHTML = `
                     <div class="loading">
                         <div style="font-size: 3em; margin-bottom: 20px;">⚠️</div>
                         <div class="loading-text">Không thể tải dữ liệu</div>
                         <div class="error-message">
-                            <strong>Lỗi:</strong> ${error.message}<br><br>
                             Vui lòng kiểm tra:<br>
-                            1. URL của file CSV có đúng không?<br>
-                            2. File CSV đã được public trên web chưa?<br>
-                            3. Kết nối internet ổn định.
+                            1. File CSV có tồn tại tại: <strong>${CSV_URL}</strong><br>
+                            2. Đường dẫn đúng định dạng<br>
+                            3. Kết nối internet ổn định
                         </div>
                         <button class="btn" onclick="location.reload()" style="margin-top: 20px;">Thử Lại</button>
                     </div>
@@ -409,53 +512,94 @@
             }
         }
 
+        // ===== HÀM PARSE CSV =====
         function parseCSV(csvText) {
-            const lines = csvText.trim().split(/\r?\n/);
-            const headers = lines[0].split(',').map(h => h.trim());
-            const requiredCols = ['id', 'anh_url', 'loi_chuc'];
-            if (!requiredCols.every(col => headers.includes(col))) {
-                throw new Error(`CSV thiếu cột bắt buộc. Cần có: ${requiredCols.join(', ')}`);
+            const lines = csvText.trim().split('\n');
+            const delimiter = lines[0].includes(';') ? ';' : ',';
+            const headers = lines[0].split(delimiter).map(h => h.trim());
+            
+            const idIndex = headers.indexOf('id');
+            const loiChucIndex = headers.indexOf('loi_chuc');
+            const anhIndex = headers.indexOf('anh_url');
+            
+            if (idIndex === -1 || loiChucIndex === -1 || anhIndex === -1) {
+                throw new Error('CSV thiếu cột bắt buộc: id, anh_url, loi_chuc');
             }
             
             for (let i = 1; i < lines.length; i++) {
-                const values = lines[i].split(',');
-                const entry = headers.reduce((obj, header, index) => {
-                    obj[header] = values[index] ? values[index].trim().replace(/^"|"$/g, '') : '';
-                    return obj;
-                }, {});
+                const line = lines[i].trim();
+                if (!line) continue;
                 
-                if (entry.id && entry.anh_url && entry.loi_chuc) {
-                    messagesData[entry.id] = {
-                        imageUrl: entry.anh_url,
-                        message: entry.loi_chuc
+                const values = parseCSVLine(line, delimiter);
+                
+                const id = values[idIndex]?.trim();
+                const loiChuc = values[loiChucIndex]?.trim();
+                const anhUrl = values[anhIndex]?.trim();
+                
+                if (id && loiChuc && anhUrl) {
+                    messagesData[id] = {
+                        message: loiChuc,
+                        imageUrl: anhUrl
                     };
                 }
             }
         }
 
+        // ===== HÀM PARSE CSV LINE (XỬ LÝ QUOTES) =====
+        function parseCSVLine(line, delimiter) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+            
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === delimiter && !inQuotes) {
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current.trim());
+            
+            return result;
+        }
+
         // ===== KHỞI TẠO GAME =====
         function initializeRounds() {
+            // Render flowers
             const flowerContainer = document.getElementById('flowerOptions');
-            flowers.forEach(item => {
+            flowers.forEach(flower => {
                 const div = document.createElement('div');
                 div.className = 'option-card';
-                div.innerHTML = `<div class="option-icon">${item.emoji}</div><div class="option-name">${item.name}</div>`;
-                div.onclick = () => selectOption('flower', item.id, div);
+                div.innerHTML = `
+                    <div class="option-icon">${flower.emoji}</div>
+                    <div class="option-name">${flower.name}</div>
+                `;
+                div.onclick = () => selectOption('flower', flower.id, div);
                 flowerContainer.appendChild(div);
             });
 
+            // Render foods
             const foodContainer = document.getElementById('foodOptions');
-            foods.forEach(item => {
+            foods.forEach(food => {
                 const div = document.createElement('div');
                 div.className = 'option-card';
-                div.innerHTML = `<div class="option-icon">${item.emoji}</div><div class="option-name">${item.name}</div>`;
-                div.onclick = () => selectOption('food', item.id, div);
+                div.innerHTML = `
+                    <div class="option-icon">${food.emoji}</div>
+                    <div class="option-name">${food.name}</div>
+                `;
+                div.onclick = () => selectOption('food', food.id, div);
                 foodContainer.appendChild(div);
             });
         }
 
         function selectOption(type, id, element) {
-            element.parentElement.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+            const container = element.parentElement;
+            container.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
             element.classList.add('selected');
             selections[type] = id;
             
@@ -463,13 +607,16 @@
             document.getElementById(btnId).disabled = false;
         }
 
-        // ===== ĐIỀU HƯỚNG =====
-        function startGame() { showScreen('round1'); }
-        function nextRound() { showScreen('round2'); }
-        function goBack(screenId) { showScreen(screenId); }
-        function showScreen(screenId) {
-            document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
-            document.getElementById(screenId).classList.add('active');
+        function startGame() {
+            showScreen('round1');
+        }
+
+        function nextRound() {
+            showScreen('round2');
+        }
+
+        function goBack(screen) {
+            showScreen(screen);
         }
 
         function showResult() {
@@ -478,29 +625,37 @@
 
             if (!result) {
                 console.error('❌ Không tìm thấy dữ liệu cho combo:', key);
-                alert('Rất tiếc, chưa có lời chúc cho sự kết hợp này. Vui lòng thử lại với lựa chọn khác!');
+                alert('Lỗi: Không tìm thấy dữ liệu cho tổ hợp này!\nCombo: ' + key);
                 return;
             }
 
+            // Hiển thị ảnh
             const resultImageContainer = document.getElementById('resultImage');
-            resultImageContainer.innerHTML = `<img src="${result.imageUrl}" alt="Kết quả" onerror="this.parentElement.innerHTML='<div class=\'result-image-placeholder\'>🎉</div>'">`;
-            
-            document.getElementById('resultMessage').textContent = '💖 Món Quà Dành Tặng Riêng Bạn 💖';
+            resultImageContainer.innerHTML = `<img src="${result.imageUrl}" alt="Kết quả" onerror="this.parentElement.innerHTML='<div class=\\'result-image-placeholder\\'>🎉</div>'">`;
+
+            // Hiển thị lời chúc
+            document.getElementById('resultMessage').textContent = '💖 Dành Cho Bạn 💖';
             document.getElementById('resultDescription').textContent = result.message;
 
+            // Hiển thị combo đã chọn
             const comboContainer = document.getElementById('resultCombo');
             comboContainer.innerHTML = `
                 <div class="combo-item">${flowers[selections.flower].emoji} ${flowers[selections.flower].name}</div>
                 <div class="combo-item">${foods[selections.food].emoji} ${foods[selections.food].name}</div>
             `;
+
             showScreen('result');
+        }
+
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
         }
 
         function resetGame() {
             selections = { flower: null, food: null };
             document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
-            document.getElementById('btn1').disabled = true;
-            document.getElementById('btn2').disabled = true;
+            document.querySelectorAll('.btn-primary').forEach(btn => btn.disabled = true);
             showScreen('welcome');
         }
 

@@ -500,38 +500,26 @@
         // ===== DỮ LIỆU CỐ ĐỊNH =====
         const colors = [
             { id: 0, name: 'Đỏ', color: '#e74c3c', emoji: '❤️' },
-            { id: 1, name: 'Cam', color: '#e67e22', emoji: '🧡' },
+            { id: 1, name: 'Tím', color: '#9b59b6', emoji: '💜' },
             { id: 2, name: 'Vàng', color: '#f1c40f', emoji: '💛' },
-            { id: 3, name: 'Xanh Lá', color: '#2ecc71', emoji: '💚' },
-            { id: 4, name: 'Xanh Dương', color: '#3498db', emoji: '💙' },
-            { id: 5, name: 'Tím', color: '#9b59b6', emoji: '💜' },
-            { id: 6, name: 'Hồng', color: '#ff69b4', emoji: '🩷' }
+            { id: 3, name: 'Lục', color: '#2ecc71', emoji: '💚' },
+            { id: 4, name: 'Đen', color: '#2c3e50', emoji: '🖤' }
         ];
 
         const foods = [
-            { id: 0, name: 'Phở', emoji: '🍜' },
-            { id: 1, name: 'Pizza', emoji: '🍕' },
-            { id: 2, name: 'Sushi', emoji: '🍣' },
-            { id: 3, name: 'Bánh Mì', emoji: '🥖' },
-            { id: 4, name: 'Burger', emoji: '🍔' },
-            { id: 5, name: 'Mì Ý', emoji: '🍝' },
-            { id: 6, name: 'Gà Rán', emoji: '🍗' },
-            { id: 7, name: 'Taco', emoji: '🌮' },
-            { id: 8, name: 'Cơm', emoji: '🍚' },
-            { id: 9, name: 'Salad', emoji: '🥗' }
+            { id: 0, name: 'Bún Chả', emoji: '🍜' },
+            { id: 1, name: 'Gà Rán', emoji: '🍗' },
+            { id: 2, name: 'Chocolate', emoji: '🍫' },
+            { id: 3, name: 'Matcha', emoji: '🍵' },
+            { id: 4, name: 'Mỳ Tôm', emoji: '🍜' }
         ];
 
         const flowers = [
-            { id: 0, name: 'Hồng', emoji: '🌹' },
-            { id: 1, name: 'Tulip', emoji: '🌷' },
+            { id: 0, name: 'Cúc', emoji: '🌼' },
+            { id: 1, name: 'Cát Tường', emoji: '💐' },
             { id: 2, name: 'Hướng Dương', emoji: '🌻' },
-            { id: 3, name: 'Mai', emoji: '🌼' },
-            { id: 4, name: 'Sen', emoji: '🪷' },
-            { id: 5, name: 'Lan', emoji: '🌸' },
-            { id: 6, name: 'Anh Đào', emoji: '🌺' },
-            { id: 7, name: 'Cúc', emoji: '💐' },
-            { id: 8, name: 'Oải Hương', emoji: '🪻' },
-            { id: 9, name: 'Lily', emoji: '🏵️' }
+            { id: 3, name: 'Hồng', emoji: '🌹' },
+            { id: 4, name: 'Lan', emoji: '🌸' }
         ];
 
         // ===== BIẾN TOÀN CỤC =====
@@ -601,11 +589,11 @@
                 const line = lines[i].trim();
                 if (!line) continue;
                 
-                // Parse dòng CSV (xử lý trường hợp có dấu phẩy trong quotes)
-                const values = parseCSVLine(line);
+                // Parse dòng CSV với delimiter phát hiện được
+                const values = line.split(delimiter).map(v => v.trim().replace(/^"|"$/g, ''));
                 
                 const id = values[idIndex]?.trim();
-                const loiChuc = values[loiChucIndex]?.trim().replace(/^"|"$/g, ''); // Bỏ quotes
+                const loiChuc = values[loiChucIndex]?.trim();
                 const anhUrl = values[anhIndex]?.trim();
                 
                 if (id && loiChuc && anhUrl) {

@@ -583,7 +583,9 @@
         // ===== HÀM PARSE CSV =====
         function parseCSV(csvText) {
             const lines = csvText.trim().split('\n');
-            const headers = lines[0].split(',').map(h => h.trim());
+            // Tự động phát hiện delimiter (, hoặc ;)
+            const delimiter = lines[0].includes(';') ? ';' : ',';
+            const headers = lines[0].split(delimiter).map(h => h.trim());
             
             // Tìm vị trí các cột
             const idIndex = headers.indexOf('id');

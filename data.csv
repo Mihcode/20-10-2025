@@ -1,7 +1,51 @@
-id,mau_id,mau_ten,mon_an_id,mon_an_ten,hoa_id,hoa_ten,anh_url,loi_chuc
-0-0-0,0,Đỏ,0,images/foods/buncha.jpg,0,images/flowers/cuc.jpg,images/kols/binh.jpg,"Hôm nay nhân dịp 20 tháng 10, Bình Gold chúc tất cả các chị em phụ nữ luôn chill như beat, đẹp như lyric và chất như track mới."
-1-1-1,1,Tím,1,images/foods/chicken.jpg,1,images/flowers/cut.jpg,images/kols/binh.jpg,"Hôm nay nhân dịp 20 tháng 10, Bình Gold chúc các chị em phụ nữ auto xinh – auto đỉnh, bước ra đường là spotlight bật sáng."
-2-2-2,2,Vàng,2,images/foods/chocolate.jpg,2,images/flowers/duong.jpg,images/kols/binh.jpg,"Hôm nay nhân dịp 20 tháng 10, Bình Gold chúc chị em không cần filter vẫn lung linh, không cần love vẫn thấy mình là queen."
-3-3-3,3,Lục,3,images/foods/matcha.jpg,3,images/flowers/hong.jpg,images/kols/binh.jpg,"Hôm nay nhân dịp 20 tháng 10, Bình Gold chúc các chị em phụ nữ ví dày, da xịn, mood high và luôn ngầu như bản rap mới ra mắt."
-4-4-4,4,Đen,4,images/foods/mytom.jpg,4,images/flowers/lan.jpg,images/kols/binh.jpg,"Hôm nay nhân dịp 20 tháng 10, Bình Gold chúc các chị em phụ nữ lương tăng, deal ngon, trai theo mỏi gối mà vẫn chill như không."
-,,,,,,,,
+﻿id,anh_url,loi_chuc
+0-0,images/kols/binh.jpg,Hôm nay nhân dịp 20 tháng 10 Bình Gold chúc tất cả các chị em phụ nữ luôn chill như beat đẹp như lyric và chất như track mới.
+0-1,images/kols/binh.jpg,Hôm nay nhân dịp 20 tháng 10 Bình Gold chúc các chị em phụ nữ auto xinh – auto đỉnh bước ra đường là spotlight bật sáng. Ai có ô tô cho Bình mượn nhé
+0-2,images/kols/binh.jpg,Hôm nay nhân dịp 20 tháng 10 Bình Gold chúc chị em không cần filter vẫn lung linh không cần love vẫn thấy mình là queen có căn nhà ở một mình hai tấm
+0-3,images/kols/binh.jpg,Hôm nay nhân dịp 20 tháng 10 Bình Gold chúc các chị em phụ nữ ví dày và luôn ngầu như bản rap mới ra mắt. Có khó khăn gì liên hệ Bình ông bà già Bình lo hết
+0-4,images/kols/binh.jpg,Hôm nay nhân dịp 20 tháng 10 Bình Gold chúc các chị em phụ nữ lương tăng deal ngon trai theo mỏi gối mà vẫn chill như không. Ai cần bốc bát họ thì liên hệ Bình nhé
+0-5,images/kols/domixi.jpg,Hôm nay nhân dịp 20 tháng 10 Độ Mixi chúc tất cả các chị em phụ nữ luôn xinh đẹp tự tin và đừng làm gì để mẹ buồn nhé !
+0-6,images/kols/domixi.jpg,Hôm nay nhân dịp 20 tháng 10 Độ Mixi chúc tất cả các chị em phụ nữ luôn vui vẻ hạnh phúc và đừng quên... nếu có ai xúc phạm đến vợ con bạn hãy gọi Độ Mixi để xử lý nhé!
+0-7,images/kols/domixi.jpg,Hôm nay nhân dịp 20 tháng 10 Độ Mixi chúc tất cả các chị em phụ nữ luôn xinh đẹp tự tin và đừng bao giờ hút shisha ở nơi công cộng nhé!
+0-8,images/kols/domixi.jpg,Hôm nay nhân dịp 20 tháng 10 Độ Mixi chúc tất cả các chị em phụ nữ luôn vui vẻ hạnh phúc và đừng quên... nếu có ai nói tục hãy dạy dỗ họ như Độ Mixi nhé!
+0-9,images/kols/domixi.jpg,Hôm nay nhân dịp 20 tháng 10 Độ Mixi chúc tất cả các chị em phụ nữ luôn xinh đẹp khỏe mạnh yêu lấy người thân đặc biệt là cha của mình nhé
+1-0,images/kols/jack.jpg,Hôm nay nhân dịp 20 tháng 10 Jack chúc tất cả các chị em phụ nữ luôn nở nụ cười tươi tràn đầy sức sống và khi nào cảm thấy mệt mỏi quả hãy nhìn lên bầu trời luôn có một vì tinh tú vẫn đang dõi theo nhé
+1-1,images/kols/jack.jpg,Hôm nay nhân dịp 20 tháng 10 Jack chúc tất cả các chị em phụ nữ luôn quyến rũ thông minh sống liêm khiết đói cho sạch khó quá thì jack cho 5 triệu nhé
+1-2,images/kols/jack.jpg,Hôm nay nhân dịp 20 tháng 10 Jack chúc tất cả các chị em phụ nữ đừng ngại sống thật yêu thật và thi thoảng làm một pha 'gây bão' để đời thêm thú vị.
+1-3,images/kols/jack.jpg,Hôm nay nhân dịp 20 tháng 10 Jack chúc tất cả các chị em phụ nữ có nhiều niềm vui trong đời trong đời được yêu thương ai mà có chồng thì được chồng chăm sóc nuôi con nhiệt tình.
+1-4,images/kols/jack.jpg,Hôm nay nhân dịp 20 tháng 10 Jack chúc tất cả các chị em phụ nữ dũng cảm mạnh mẽ kiên cường trước mọi thi phi mọi cuộc họp báo.
+1-5,images/kols/ngan.jpg,Hôm nay nhân dịp 20 tháng 10 Ngân 98 chúc tất cả các chị em phụ nữ cũng như Ngân luôn tự tin mặc đồ táo bạo mà vẫn giữ vẻ sang trọng bước ra đường là spotlight bật sáng.
+1-6,images/kols/ngan.jpg,Hôm nay nhân dịp 20 tháng 10 Ngân 98 chúc tất cả các chị em phụ nữ cũng như Ngân có nhiều follower livestream đông người xem và mỗi post đều khiến mạng xã hội rần rần.
+1-7,images/kols/ngan.jpg,Hôm nay nhân dịp 20 tháng 10 Ngân 98 chúc tất cả các chị em phụ nữ cũng như Ngân yêu bản thân thật nhiều thả nhẹ một caption là tim fan rơi đầy timeline.
+1-8,images/kols/ngan.jpg,Hôm nay nhân dịp 20 tháng 10 Ngân 98 chúc tất cả các chị em phụ nữ hãy luôn giỏi giang trung thực sống đúng đừng ai buôn bán hàng giả hàng cấm gì nhé.
+1-9,images/kols/ngan.jpg,Hôm nay nhân dịp 20 tháng 10 Ngân 98 chúc tất cả các chị em phụ nữ biết yêu lấy bản thân mình khi nào cô đơn quá thì vào trong này thăm Ngân nhé
+2-0,images/kols/shark.jpg,Hôm nay nhân dịp 20 tháng 10 Shark Bình chúc tất cả các chị em phụ nữ luôn đàm phán khôn như Shark — deal nào cũng lãi tiền vào ví đều đều drama thì xử nhẹ nhàng như… ký hợp đồng.
+2-1,images/kols/shark.jpg,Hôm nay nhân dịp 20 tháng 10 Shark Bình chúc tất cả các chị em phụ nữ tự tin máu mặt trong công việc biến ý tưởng thành cơ hội còn ai nói xấu thì để họ nói — bạn cứ bận nhận vốn.
+2-2,images/kols/shark.jpg,Hôm nay nhân dịp 20 tháng 10 Shark Bình chúc tất cả các chị em phụ nữ ví dày portfolio sáng live một cái là fan rần rần và nếu có chút ồn ào thì cũng chỉ là PR miễn phí.
+2-3,images/kols/shark.jpg,Hôm nay nhân dịp 20 tháng 10 Shark Bình chúc tất cả các chị em phụ nữ biết mặc đẹp giỏi ứng biến trước cuộc sống và luôn xinh xắn như búp bê .
+2-4,images/kols/shark.jpg,Hôm nay nhân dịp 20 tháng 10 Shark Bình chúc tất cả các chị em phụ nữ dũng cảm quyết đoán chịu trách nhiệm và luôn sống đúng với pháp luật không lừa đảo.
+2-5,images/kols/thoai.jpg,Chào bạn là Phạm Thoại đây hôm nay nhân dịp 20 tháng 10 Thoại chúc tất cả các chị em phụ nữ luôn tự tin sống lầy một chút cho đời vui hơn và nếu có ai “réo tên” thì cứ nhẹ nhàng reply một câu cho dân mạng nhốn nháo.
+2-6,images/kols/thoai.jpg,Chào bạn là Phạm Thoại đây hôm nay nhân dịp 20 tháng 10 Thoại chúc tất cả các chị em phụ nữ có tâm hồn nóng bỏng như status gây bão nhưng lúc cần vẫn biết xin lỗi khéo để qua cơn bão dư luận.
+2-7,images/kols/thoai.jpg,Chào bạn là Phạm Thoại đây hôm nay nhân dịp 20 tháng 10 Thoại chúc tất cả các chị em phụ nữ mấy pha livestream triệu view fan đông như trẩy hội và mấy vụ lùm xùm thì qua nhanh như trend mới.
+2-8,images/kols/thoai.jpg,Chào bạn là Phạm Thoại đây hôm nay nhân dịp 20 tháng 10 Thoại chúc tất cả các chị em phụ nữ mặc gì cũng xịn nói gì cũng viral và nếu có ai muốn làm từ thiện thì hãy donate cho Thoại nhé
+2-9,images/kols/thoai.jpg,Chào bạn là Phạm Thoại đây hôm nay nhân dịp 20 tháng 10 Thoại chúc tất cả các chị em phụ nữ yêu bản thân thật nhiều tận dụng spotlight thông minh và giữ drama vừa đủ để đời thêm màu.
+3-0,images/kols/tien.jpg,Hello tôi là Tiến Bịp đây hôm nay nhân dịp 20 tháng 10 Tiến chúc tất cả các chị em phụ nữ luôn tươi tắn biết dùng mẹo khôn để săn deal hời tiền vào như nước drama thì cứ để người ta bàn — mình vẫn chill.
+3-1,images/kols/tien.jpg,Hello tôi là Tiến Bịp đây hôm nay nhân dịp 20 tháng 10 Tiến chúc tất cả các chị em phụ nữ biết cách tận dụng spotlight livestream một câu là trend còn mấy chiêu trò thì học cho biết rồi bỏ qua.
+3-2,images/kols/tien.jpg,Hello tôi là Tiến Bịp đây hôm nay nhân dịp 20 tháng 10 Tiến chúc tất cả các chị em phụ nữ giữ được phong cách duyên dáng khi cần và tỉnh táo khi gặp mấy vụ “mẹo nhỏ” trên mạng.
+3-3,images/kols/tien.jpg,Hello tôi là Tiến Bịp đây hôm nay nhân dịp 20 tháng 10 Tiến chúc tất cả các chị em phụ nữ có nhiều fan nhiều follow nói một câu là viral còn bọn thích gây ồn thì để họ tự lạc đường.
+3-4,images/kols/tien.jpg,Hello tôi là Tiến Bịp đây hôm nay nhân dịp 20 tháng 10 Tiến chúc tất cả các chị em phụ nữ dũng cảm thử sức khôn ngoan né drama và luôn giữ nụ cười dù có đôi lúc đời hơi… hài hước.
+3-5,images/kols/negav.jpg,"Chào các embes Negav đây hôm nay nhân dịp 20 tháng 10 An chúc tất cả các chị em phụ nữ luôn xinh đẹp thành công. Có thể hãnh diễn nói với mẹ rằng : "" Mẹ ơi mẹ đã thấy đúng khi cho con đi học chưa"
+3-6,images/kols/negav.jpg,Chào các embes Negav đây hôm nay nhân dịp 20 tháng 10 An chúc tất cả các chị em phụ nữ livestream một câu là triệu view fan đông như hội còn mấy vụ ồn ào thì qua nhanh như trend mới.
+3-7,images/kols/negav.jpg,Chào các embes Negav đây hôm nay nhân dịp 20 tháng 10 An chúc tất cả các chị em phụ nữ thả caption một phát là tim rụng vẫn giữ được bình tĩnh khi gặp mấy 'phốt' — xử lý khéo drama thành content.
+3-8,images/kols/negav.jpg,Chào các embes Negav đây hôm nay nhân dịp 20 tháng 10 An chúc tất cả các chị em phụ nữ tiền vào đều đều style chất biết tận dụng spotlight để đời thêm màu và phát ngôn chuẩn chỉ không bậy bạ bừa bãi
+3-9,images/kols/negav.jpg,Chào các embes Negav đây hôm nay nhân dịp 20 tháng 10  An chúc tất cả các chị em sống mạnh mẽ kiên cường trước khó khă. Nếu dòng đời có làm ta rơi lệ thì hãy dùng khăn giấy ướt lau nhé
+4-0,images/kols/khabanh.jpg,Chào mọi người nhé Bảnh đây đây hôm nay nhân dịp 20 tháng 10 Bảnh chúc tất cả các chị em phụ nữ xinh như hotgirl. Ngầu như giang hồ mạng và biết chọn người yêu không chọn nhầm thằng Bảnh khác nhé.
+4-1,images/kols/khabanh.jpg,Chào mọi người nhé Bảnh đây đây hôm nay nhân dịp 20 tháng 10 Bảnh chúc tất cả các chị em phụ nữ luôn tự tin. sống thật. nói thẳng như Bảnh nhưng nhớ đừng dại như Bảnh là được.
+4-2,images/kols/khabanh.jpg,Chào mọi người nhé Bảnh đây đây hôm nay nhân dịp 20 tháng 10 Bảnh chúc tất cả các chị em phụ nữ ra đường có người chở. ăn mặc đẹp. Múa quạt dẻo trên mọi nền nhạc nhé
+4-3,images/kols/khabanh.jpg,Chào mọi người nhé Bảnh đây đây hôm nay nhân dịp 20 tháng 10 Bảnh chúc tất cả các chị em phụ nữ mạnh mẽ. biết làm chủ cuộc đời. và nếu có bị ai cà khịa thì cứ cười nhẹ như Bảnh trước khi đi ...
+4-4,images/kols/khabanh.jpg,Chào mọi người nhé Bảnh đây đây hôm nay nhân dịp 20 tháng 10 Bảnh chúc tất cả các chị em phụ nữ xinh đẹp. giàu có. yêu đúng người. Hãy nhớ rằng xã hội này không có chuyện đúng sai chỉ có kẻ yếu và kẻ mạnh
+4-5,images/kols/huan.jpg,Chào mọi người nhé Huấn hoa hồng đây đây hôm nay nhân dịp 20 tháng 10 Huấn chúc tất cả các chị em phụ nữ luôn xinh đẹp. kiếm tiền giỏi. và nhớ là không làm mà đòi có ăn thì chỉ có ăn nước mắt thôi nha.
+4-6,images/kols/huan.jpg,Chào mọi người nhé Huấn hoa hồng đây đây hôm nay nhân dịp 20 tháng 10 Huấn chúc tất cả các chị em phụ nữ yêu ai thì chọn người biết làm. vì làm mới có tiền. tiền mới có tình. tình mới bền.
+4-7,images/kols/huan.jpg,Chào mọi người nhé Huấn hoa hồng đây đây hôm nay nhân dịp 20 tháng 10 Huấn chúc tất cả các chị em phụ nữ tỉnh táo. Luôn xinh tươi như bông hoa hồng của Huấn nhé
+4-8,images/kols/huan.jpg,Chào mọi người nhé Huấn hoa hồng đây đây hôm nay nhân dịp 20 tháng 10 Huấn chúc tất cả các chị em phụ nữ luôn được người đàn ông của mình yêu thương tặng quà. Huấn thì tặng tất cả chị em 9.5 điểm nhé vì Huấn chỉ có bằng đấy thôi
+4-9,images/kols/huan.jpg,Chào mọi người nhé Huấn hoa hồng đây đây hôm nay nhân dịp 20 tháng 10 Huấn chúc tất cả các chị em phụ nữ xinh tươi. sống thật. và nhớ là tiền không phải tất cả. Cần cù sẽ bù lại siêng năng

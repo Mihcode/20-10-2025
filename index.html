@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khám Phá Bản Thân</title>
+    <title>Mừng ngày Phụ nữ Việt Nam</title>
     <style>
         * {
             margin: 0;
@@ -161,7 +161,7 @@
 
         .options-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
@@ -218,38 +218,6 @@
             font-weight: 600;
             position: relative;
             z-index: 1;
-        }
-
-        .color-option {
-            height: 150px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 4px solid transparent;
-            display: flex;
-            align-items: flex-end;
-            padding: 15px;
-            position: relative;
-        }
-
-        .color-option:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .color-option.selected {
-            border-color: white;
-            box-shadow: 0 0 0 4px #ff6b9d, 0 15px 40px rgba(255, 107, 157, 0.4);
-            transform: translateY(-5px) scale(1.05);
-        }
-
-        .color-name {
-            color: white;
-            font-weight: 700;
-            font-size: 1.1em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            width: 100%;
-            text-align: center;
         }
 
         .progress-bar {
@@ -339,6 +307,7 @@
             font-size: 1.2em;
             line-height: 1.8;
             margin-bottom: 30px;
+            padding: 0 20px;
         }
 
         .result-combo {
@@ -380,7 +349,7 @@
             }
 
             .options-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
                 gap: 15px;
             }
 
@@ -392,12 +361,12 @@
                 font-size: 2.5em;
             }
 
-            .color-option {
-                height: 120px;
-            }
-
             .result-image {
                 height: 250px;
+            }
+
+            .result-description {
+                font-size: 1em;
             }
         }
     </style>
@@ -416,28 +385,27 @@
         <div class="screen" id="welcome">
             <div class="welcome">
                 <h1>✨ Khám Phá Bản Thân 💖</h1>
-                <p>Hãy cùng khám phá con người thật của bạn qua 3 câu hỏi thú vị! 🌸<br>
+                <p>Hãy cùng khám phá con người thật của bạn qua 2 câu hỏi thú vị! 🌸<br>
                 Chọn những gì bạn yêu thích nhất và nhận ngay lời chúc đặc biệt dành riêng cho bạn. 🎀</p>
                 <button class="btn" onclick="startGame()">Bắt Đầu Ngay</button>
             </div>
         </div>
 
-        <!-- Round 1: Colors -->
+        <!-- Round 1: Flowers -->
         <div class="screen" id="round1">
             <div class="progress-bar">
                 <div class="progress-dot active"></div>
                 <div class="progress-dot"></div>
-                <div class="progress-dot"></div>
             </div>
             <div class="round-header">
-                <div class="round-number">VÒNG 1/3</div>
-                <h2 class="round-title">Màu Sắc Yêu Thích</h2>
-                <p class="round-subtitle">Chọn màu sắc phản ánh cá tính của bạn 💕</p>
+                <div class="round-number">VÒNG 1/2</div>
+                <h2 class="round-title">Loài Hoa Yêu Thích</h2>
+                <p class="round-subtitle">Chọn loài hoa đẹp nhất trong mắt bạn 🌺</p>
             </div>
-            <div class="options-grid" id="colorOptions"></div>
+            <div class="options-grid" id="flowerOptions"></div>
             <div class="navigation">
                 <button class="btn btn-secondary" onclick="goBack('welcome')">Quay Lại</button>
-                <button class="btn btn-primary" onclick="nextRound(1)" disabled id="btn1">Tiếp Theo</button>
+                <button class="btn btn-primary" onclick="nextRound()" disabled id="btn1">Tiếp Theo</button>
             </div>
         </div>
 
@@ -446,36 +414,16 @@
             <div class="progress-bar">
                 <div class="progress-dot active"></div>
                 <div class="progress-dot active"></div>
-                <div class="progress-dot"></div>
             </div>
             <div class="round-header">
-                <div class="round-number">VÒNG 2/3</div>
+                <div class="round-number">VÒNG 2/2</div>
                 <h2 class="round-title">Món Ăn Yêu Thích</h2>
                 <p class="round-subtitle">Chọn món ăn làm bạn hạnh phúc nhất 🍰</p>
             </div>
             <div class="options-grid" id="foodOptions"></div>
             <div class="navigation">
                 <button class="btn btn-secondary" onclick="goBack('round1')">Quay Lại</button>
-                <button class="btn btn-primary" onclick="nextRound(2)" disabled id="btn2">Tiếp Theo</button>
-            </div>
-        </div>
-
-        <!-- Round 3: Flowers -->
-        <div class="screen" id="round3">
-            <div class="progress-bar">
-                <div class="progress-dot active"></div>
-                <div class="progress-dot active"></div>
-                <div class="progress-dot active"></div>
-            </div>
-            <div class="round-header">
-                <div class="round-number">VÒNG 3/3</div>
-                <h2 class="round-title">Loài Hoa Yêu Thích</h2>
-                <p class="round-subtitle">Chọn loài hoa đẹp nhất trong mắt bạn 🌺</p>
-            </div>
-            <div class="options-grid" id="flowerOptions"></div>
-            <div class="navigation">
-                <button class="btn btn-secondary" onclick="goBack('round2')">Quay Lại</button>
-                <button class="btn btn-primary" onclick="showResult()" disabled id="btn3">Xem Kết Quả</button>
+                <button class="btn btn-primary" onclick="showResult()" disabled id="btn2">Xem Kết Quả</button>
             </div>
         </div>
 
@@ -494,39 +442,35 @@
     </div>
 
     <script>
-        // ===== CẤU HÌNH - THAY ĐỔI URL CSV VÀ FOLDER ẢNH Ở ĐÂY =====
-        const CSV_URL = 'data.csv'; // Thay bằng URL CSV trên GitHub: 'https://raw.githubusercontent.com/username/repo/main/data.csv'
+        // ===== CẤU HÌNH =====
+        const CSV_URL = 'data.csv'; // Thay URL CSV của bạn tại đây
         
         // ===== DỮ LIỆU CỐ ĐỊNH =====
-        const colors = [
-            { id: 0, name: 'Đỏ', color: '#e74c3c', emoji: '❤️' },
-            { id: 1, name: 'Tím', color: '#9b59b6', emoji: '💜' },
-            { id: 2, name: 'Vàng', color: '#f1c40f', emoji: '💛' },
-            { id: 3, name: 'Lục', color: '#2ecc71', emoji: '💚' },
-            { id: 4, name: 'Đen', color: '#2c3e50', emoji: '🖤' }
+        const flowers = [
+            { id: 0, name: 'Hoa Hồng', emoji: '🌹' },
+            { id: 1, name: 'Hoa Cúc', emoji: '🌼' },
+            { id: 2, name: 'Hướng Dương', emoji: '🌻' },
+            { id: 3, name: 'Hoa Ly', emoji: '🌷' },
+            { id: 4, name: 'Hoa Sen', emoji: '🪷' }
         ];
 
         const foods = [
-            { id: 0, name: 'Bún Chả', emoji: '🍜' },
-            { id: 1, name: 'Gà Rán', emoji: '🍗' },
-            { id: 2, name: 'Chocolate', emoji: '🍫' },
-            { id: 3, name: 'Matcha', emoji: '🍵' },
-            { id: 4, name: 'Mỳ Tôm', emoji: '🍜' }
-        ];
-
-        const flowers = [
-            { id: 0, name: 'Cúc', emoji: '🌼' },
-            { id: 1, name: 'Cát Tường', emoji: '💐' },
-            { id: 2, name: 'Hướng Dương', emoji: '🌻' },
-            { id: 3, name: 'Hồng', emoji: '🌹' },
-            { id: 4, name: 'Lan', emoji: '🌸' }
+            { id: 0, name: 'Trà Sữa', emoji: '🧋' },
+            { id: 1, name: 'Bánh Ngọt', emoji: '🍰' },
+            { id: 2, name: 'Sushi', emoji: '🍣' },
+            { id: 3, name: 'Salad', emoji: '🥗' },
+            { id: 4, name: 'Mì Ý', emoji: '🍝' },
+            { id: 5, name: 'Chocolate', emoji: '🍫' },
+            { id: 6, name: 'Kem', emoji: '🍦' },
+            { id: 7, name: 'Pizza', emoji: '🍕' },
+            { id: 8, name: 'Matcha', emoji: '🍵' },
+            { id: 9, name: 'Macarons', emoji: '🧁' }
         ];
 
         // ===== BIẾN TOÀN CỤC =====
         let selections = {
-            color: null,
-            food: null,
-            flower: null
+            flower: null,
+            food: null
         };
 
         let dataLoaded = false;
@@ -571,26 +515,22 @@
         // ===== HÀM PARSE CSV =====
         function parseCSV(csvText) {
             const lines = csvText.trim().split('\n');
-            // Tự động phát hiện delimiter (, hoặc ;)
             const delimiter = lines[0].includes(';') ? ';' : ',';
             const headers = lines[0].split(delimiter).map(h => h.trim());
             
-            // Tìm vị trí các cột
             const idIndex = headers.indexOf('id');
             const loiChucIndex = headers.indexOf('loi_chuc');
             const anhIndex = headers.indexOf('anh_url');
             
             if (idIndex === -1 || loiChucIndex === -1 || anhIndex === -1) {
-                throw new Error('CSV thiếu cột bắt buộc: id, loi_chuc, anh_url');
+                throw new Error('CSV thiếu cột bắt buộc: id, anh_url, loi_chuc');
             }
             
-            // Parse từng dòng
             for (let i = 1; i < lines.length; i++) {
                 const line = lines[i].trim();
                 if (!line) continue;
                 
-                // Parse dòng CSV với delimiter phát hiện được
-                const values = line.split(delimiter).map(v => v.trim().replace(/^"|"$/g, ''));
+                const values = parseCSVLine(line, delimiter);
                 
                 const id = values[idIndex]?.trim();
                 const loiChuc = values[loiChucIndex]?.trim();
@@ -606,7 +546,7 @@
         }
 
         // ===== HÀM PARSE CSV LINE (XỬ LÝ QUOTES) =====
-        function parseCSVLine(line) {
+        function parseCSVLine(line, delimiter) {
             const result = [];
             let current = '';
             let inQuotes = false;
@@ -616,29 +556,31 @@
                 
                 if (char === '"') {
                     inQuotes = !inQuotes;
-                } else if (char === ',' && !inQuotes) {
-                    result.push(current);
+                } else if (char === delimiter && !inQuotes) {
+                    result.push(current.trim());
                     current = '';
                 } else {
                     current += char;
                 }
             }
-            result.push(current);
+            result.push(current.trim());
             
             return result;
         }
 
         // ===== KHỞI TẠO GAME =====
         function initializeRounds() {
-            // Render colors
-            const colorContainer = document.getElementById('colorOptions');
-            colors.forEach(color => {
+            // Render flowers
+            const flowerContainer = document.getElementById('flowerOptions');
+            flowers.forEach(flower => {
                 const div = document.createElement('div');
-                div.className = 'color-option';
-                div.style.background = `linear-gradient(135deg, ${color.color}, ${adjustColor(color.color, -30)})`;
-                div.innerHTML = `<div class="color-name">${color.emoji} ${color.name}</div>`;
-                div.onclick = () => selectOption('color', color.id, div);
-                colorContainer.appendChild(div);
+                div.className = 'option-card';
+                div.innerHTML = `
+                    <div class="option-icon">${flower.emoji}</div>
+                    <div class="option-name">${flower.name}</div>
+                `;
+                div.onclick = () => selectOption('flower', flower.id, div);
+                flowerContainer.appendChild(div);
             });
 
             // Render foods
@@ -653,31 +595,6 @@
                 div.onclick = () => selectOption('food', food.id, div);
                 foodContainer.appendChild(div);
             });
-
-            // Render flowers
-            const flowerContainer = document.getElementById('flowerOptions');
-            flowers.forEach(flower => {
-                const div = document.createElement('div');
-                div.className = 'option-card';
-                div.innerHTML = `
-                    <div class="option-icon">${flower.emoji}</div>
-                    <div class="option-name">${flower.name}</div>
-                `;
-                div.onclick = () => selectOption('flower', flower.id, div);
-                flowerContainer.appendChild(div);
-            });
-        }
-
-        function adjustColor(color, percent) {
-            const num = parseInt(color.replace('#', ''), 16);
-            const amt = Math.round(2.55 * percent);
-            const R = (num >> 16) + amt;
-            const G = (num >> 8 & 0x00FF) + amt;
-            const B = (num & 0x0000FF) + amt;
-            return '#' + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
-                (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
-                (B < 255 ? B < 1 ? 0 : B : 255))
-                .toString(16).slice(1);
         }
 
         function selectOption(type, id, element) {
@@ -686,7 +603,7 @@
             element.classList.add('selected');
             selections[type] = id;
             
-            const btnId = type === 'color' ? 'btn1' : type === 'food' ? 'btn2' : 'btn3';
+            const btnId = type === 'flower' ? 'btn1' : 'btn2';
             document.getElementById(btnId).disabled = false;
         }
 
@@ -694,12 +611,8 @@
             showScreen('round1');
         }
 
-        function nextRound(round) {
-            if (round === 1) {
-                showScreen('round2');
-            } else if (round === 2) {
-                showScreen('round3');
-            }
+        function nextRound() {
+            showScreen('round2');
         }
 
         function goBack(screen) {
@@ -707,29 +620,28 @@
         }
 
         function showResult() {
-            const key = `${selections.color}-${selections.food}-${selections.flower}`;
+            const key = `${selections.flower}-${selections.food}`;
             const result = messagesData[key];
 
             if (!result) {
                 console.error('❌ Không tìm thấy dữ liệu cho combo:', key);
-                alert('Lỗi: Không tìm thấy dữ liệu cho tổ hợp này!');
+                alert('Lỗi: Không tìm thấy dữ liệu cho tổ hợp này!\nCombo: ' + key);
                 return;
             }
 
             // Hiển thị ảnh
             const resultImageContainer = document.getElementById('resultImage');
-            resultImageContainer.innerHTML = `<img src="${result.imageUrl}" alt="Kết quả" onerror="this.parentElement.innerHTML='<div class=\'result-image-placeholder\'>🎉</div>'">`;
+            resultImageContainer.innerHTML = `<img src="${result.imageUrl}" alt="Kết quả" onerror="this.parentElement.innerHTML='<div class=\\'result-image-placeholder\\'>🎉</div>'">`;
 
             // Hiển thị lời chúc
-            document.getElementById('resultMessage').textContent = '🎉 Dành Cho Bạn 🎉';
+            document.getElementById('resultMessage').textContent = '💖 Dành Cho Bạn 💖';
             document.getElementById('resultDescription').textContent = result.message;
 
             // Hiển thị combo đã chọn
             const comboContainer = document.getElementById('resultCombo');
             comboContainer.innerHTML = `
-                <div class="combo-item">${colors[selections.color].emoji} ${colors[selections.color].name}</div>
-                <div class="combo-item">${foods[selections.food].emoji} ${foods[selections.food].name}</div>
                 <div class="combo-item">${flowers[selections.flower].emoji} ${flowers[selections.flower].name}</div>
+                <div class="combo-item">${foods[selections.food].emoji} ${foods[selections.food].name}</div>
             `;
 
             showScreen('result');
@@ -741,17 +653,14 @@
         }
 
         function resetGame() {
-            selections = { color: null, food: null, flower: null };
+            selections = { flower: null, food: null };
             document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
             document.querySelectorAll('.btn-primary').forEach(btn => btn.disabled = true);
             showScreen('welcome');
         }
 
         // ===== KHỞI ĐỘNG =====
-        // Initialize game UI
         initializeRounds();
-
-        // Load CSV data
         loadCSVData();
     </script>
 </body>

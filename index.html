@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mừng ngày Phụ nữ Việt Nam</title>
+    <title>Mừng ngày Phụ nữ Việt Nam 20/10</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌹</text></svg>">
     <style>
         * {
             margin: 0;
@@ -384,9 +385,9 @@
         <!-- Welcome Screen -->
         <div class="screen" id="welcome">
             <div class="welcome">
-                <h1>✨ Khám Phá Bản Thân 💖</h1>
-                <p>Hãy cùng khám phá con người thật của bạn qua 2 câu hỏi thú vị! 🌸<br>
-                Chọn những gì bạn yêu thích nhất và nhận ngay lời chúc đặc biệt dành riêng cho bạn. 🎀</p>
+                <h1>🌹 Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 🌹</h1>
+                <p>Nhân dịp ngày Phụ nữ Việt Nam 20/10, hãy chọn loài hoa và món ăn yêu thích của bạn 🌸<br>
+                Để nhận ngay lời chúc đặc biệt được gửi gắm đến bạn! 💝</p>
                 <button class="btn" onclick="startGame()">Bắt Đầu Ngay</button>
             </div>
         </div>
@@ -398,7 +399,7 @@
                 <div class="progress-dot"></div>
             </div>
             <div class="round-header">
-                <div class="round-number">VÒNG 1/2</div>
+                <div class="round-number">1/2</div>
                 <h2 class="round-title">Loài Hoa Yêu Thích</h2>
                 <p class="round-subtitle">Chọn loài hoa đẹp nhất trong mắt bạn 🌺</p>
             </div>
@@ -416,7 +417,7 @@
                 <div class="progress-dot active"></div>
             </div>
             <div class="round-header">
-                <div class="round-number">VÒNG 2/2</div>
+                <div class="round-number">2/2</div>
                 <h2 class="round-title">Món Ăn Yêu Thích</h2>
                 <p class="round-subtitle">Chọn món ăn làm bạn hạnh phúc nhất 🍰</p>
             </div>
@@ -436,7 +437,6 @@
                 <h2 class="result-message" id="resultMessage"></h2>
                 <div class="result-combo" id="resultCombo"></div>
                 <p class="result-description" id="resultDescription"></p>
-                <button class="btn" onclick="resetGame()">Chơi Lại</button>
             </div>
         </div>
     </div>
@@ -653,10 +653,8 @@
         }
 
         function resetGame() {
-            selections = { flower: null, food: null };
-            document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
-            document.querySelectorAll('.btn-primary').forEach(btn => btn.disabled = true);
-            showScreen('welcome');
+            // Hàm này không còn được dùng nữa
+            // User phải reload trang để chơi lại
         }
 
         // ===== KHỞI ĐỘNG =====

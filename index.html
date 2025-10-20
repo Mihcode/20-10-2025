@@ -33,6 +33,16 @@
             border: 3px solid rgba(255, 182, 193, 0.3);
         }
 
+        .container::after {
+            content: 'Created by Mai Hoàng Minh'; 
+            position: absolute;
+            bottom: 15px; 
+            right: 20px;  
+            font-size: 12px;
+            color: #cccccc; 
+            font-style: italic;
+            pointer-events: none;
+        }
         .screen {
             display: none;
             padding: 40px;
@@ -132,7 +142,7 @@
             box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
         }
 
-        /* Round Screens */
+        /* Main Screens */
         .round-header {
             text-align: center;
             margin-bottom: 40px;
@@ -392,7 +402,7 @@
             </div>
         </div>
 
-        <!-- Round 1: Flowers -->
+        <!-- Flowers -->
         <div class="screen" id="round1">
             <div class="progress-bar">
                 <div class="progress-dot active"></div>
@@ -410,7 +420,7 @@
             </div>
         </div>
 
-        <!-- Round 2: Food -->
+        <!-- Food -->
         <div class="screen" id="round2">
             <div class="progress-bar">
                 <div class="progress-dot active"></div>
@@ -442,10 +452,8 @@
     </div>
 
     <script>
-        // ===== CẤU HÌNH =====
-        const CSV_URL = 'data.csv'; // Thay URL CSV của bạn tại đây
+        const CSV_URL = 'data.csv'; 
         
-        // ===== DỮ LIỆU CỐ ĐỊNH =====
         const flowers = [
             { id: 0, name: 'Hoa Hồng', emoji: '🌹' },
             { id: 1, name: 'Hoa Cúc', emoji: '🌼' },
@@ -467,16 +475,14 @@
             { id: 9, name: 'Macarons', emoji: '🧁' }
         ];
 
-        // ===== BIẾN TOÀN CỤC =====
         let selections = {
             flower: null,
             food: null
         };
 
         let dataLoaded = false;
-        let messagesData = {}; // Lưu trữ dữ liệu từ CSV
+        let messagesData = {}; 
 
-        // ===== HÀM ĐỌC CSV =====
         async function loadCSVData() {
             try {
                 const response = await fetch(CSV_URL);
@@ -490,12 +496,10 @@
                 dataLoaded = true;
                 console.log('✅ Đã tải thành công', Object.keys(messagesData).length, 'tổ hợp');
                 
-                // Chuyển từ loading sang welcome
                 showScreen('welcome');
             } catch (error) {
-                console.error('❌ Lỗi khi tải CSV:', error);
+                console.error('❌ Lỗi rồi:', error);
                 
-                // Hiển thị thông báo lỗi
                 document.getElementById('loading').innerHTML = `
                     <div class="loading">
                         <div style="font-size: 3em; margin-bottom: 20px;">⚠️</div>
@@ -512,7 +516,6 @@
             }
         }
 
-        // ===== HÀM PARSE CSV =====
         function parseCSV(csvText) {
             const lines = csvText.trim().split('\n');
             const delimiter = lines[0].includes(';') ? ';' : ',';
@@ -523,7 +526,7 @@
             const anhIndex = headers.indexOf('anh_url');
             
             if (idIndex === -1 || loiChucIndex === -1 || anhIndex === -1) {
-                throw new Error('CSV thiếu cột bắt buộc: id, anh_url, loi_chuc');
+                throw new Error('Có lỗi rồi');
             }
             
             for (let i = 1; i < lines.length; i++) {
@@ -545,7 +548,6 @@
             }
         }
 
-        // ===== HÀM PARSE CSV LINE (XỬ LÝ QUOTES) =====
         function parseCSVLine(line, delimiter) {
             const result = [];
             let current = '';
@@ -568,9 +570,7 @@
             return result;
         }
 
-        // ===== KHỞI TẠO GAME =====
         function initializeRounds() {
-            // Render flowers
             const flowerContainer = document.getElementById('flowerOptions');
             flowers.forEach(flower => {
                 const div = document.createElement('div');
@@ -583,7 +583,6 @@
                 flowerContainer.appendChild(div);
             });
 
-            // Render foods
             const foodContainer = document.getElementById('foodOptions');
             foods.forEach(food => {
                 const div = document.createElement('div');
@@ -624,20 +623,17 @@
             const result = messagesData[key];
 
             if (!result) {
-                console.error('❌ Không tìm thấy dữ liệu cho combo:', key);
-                alert('Lỗi: Không tìm thấy dữ liệu cho tổ hợp này!\nCombo: ' + key);
+                console.error('Không thể đọc được bạn', key);
+                alert('Không tìm thấy dữ liệu cho tổ hợp này!\nCombo: ' + key);
                 return;
             }
 
-            // Hiển thị ảnh
             const resultImageContainer = document.getElementById('resultImage');
             resultImageContainer.innerHTML = `<img src="${result.imageUrl}" alt="Kết quả" onerror="this.parentElement.innerHTML='<div class=\\'result-image-placeholder\\'>🎉</div>'">`;
 
-            // Hiển thị lời chúc
-            document.getElementById('resultMessage').textContent = '💖 Dành Cho Bạn 💖';
+            document.getElementById('resultMessage').textContent = '💖 Người thực sự muốn gửi lời chúc đến bạn 💖';
             document.getElementById('resultDescription').textContent = result.message;
 
-            // Hiển thị combo đã chọn
             const comboContainer = document.getElementById('resultCombo');
             comboContainer.innerHTML = `
                 <div class="combo-item">${flowers[selections.flower].emoji} ${flowers[selections.flower].name}</div>
@@ -652,14 +648,9 @@
             document.getElementById(screenId).classList.add('active');
         }
 
-        function resetGame() {
-            // Hàm này không còn được dùng nữa
-            // User phải reload trang để chơi lại
-        }
-
-        // ===== KHỞI ĐỘNG =====
         initializeRounds();
         loadCSVData();
     </script>
 </body>
 </html>
+
